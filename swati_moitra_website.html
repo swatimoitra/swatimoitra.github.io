@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swati Moitra — Assistant Professor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --serif: 'Cormorant Garamond', serif;
+      --sans: 'DM Sans', sans-serif;
+      --ink: #1a1a18;
+      --muted: #888780;
+      --line: rgba(0,0,0,0.12);
+      --bg: #fafaf8;
+      --surface: #fff;
+    }
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--bg);
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+    a { color: inherit; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5rem;
+    }
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* HERO */
+    .hero { margin-bottom: 5rem; }
+    .hero-label {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(48px, 8vw, 76px);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.75rem;
+    }
+    .hero h1 em { font-style: italic; font-weight: 300; }
+    .hero-bio {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 500px;
+      font-weight: 300;
+    }
+
+    /* DIVIDER */
+    .divider { height: 0.5px; background: var(--line); margin: 3.5rem 0; }
+
+    /* SECTION LABEL */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    /* RESEARCH */
+    .research-grid {
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+      border: 0.5px solid var(--line);
+    }
+    .research-item {
+      background: var(--surface);
+      padding: 1.5rem 1.75rem;
+      transition: background 0.15s;
+    }
+    .research-item:hover { background: #f5f5f2; }
+    .research-item h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .research-item p {
+      font-size: 13.5px;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .research-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 0.5px solid var(--line);
+      padding: 3px 8px;
+      margin-top: 0.75rem;
+    }
+
+    /* BLOG */
+    .blog-list { display: grid; gap: 1px; background: var(--line); border: 0.5px solid var(--line); }
+    .blog-post {
+      background: var(--surface);
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1.5rem;
+      transition: background 0.15s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .blog-post:hover { background: #f5f5f2; }
+    .blog-post-title {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1.35;
+      margin-bottom: 0.3rem;
+    }
+    .blog-post-excerpt {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+    .blog-post-date {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* CONTACT */
+    .contact-row { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .contact-item .c-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+    .contact-item a {
+      font-size: 14px;
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--line);
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+    .contact-item a:hover { border-color: var(--ink); }
+
+    /* FOOTER */
+    footer {
+      margin-top: 5rem;
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 0.5px solid var(--line);
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-name">Swati Moitra</span>
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <p class="hero-label">Assistant Professor</p>
+    <h1>Swati<br><em>Moitra</em></h1>
+    <p class="hero-bio">Scholar and educator dedicated to rigorous inquiry and meaningful teaching. Affiliated with the Department of [Your Department], [Your University].</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="research" style="margin-bottom: 3.5rem;">
+    <p class="section-label">Research</p>
+    <div class="research-grid">
+      <div class="research-item">
+        <h3>Research Area One</h3>
+        <p>A brief description of your research focus, methodology, and contributions to the field.</p>
+        <span class="research-tag">Publication · 2024</span>
+      </div>
+      <div class="research-item">
+        <h3>Research Area Two</h3>
+        <p>Summary of a second research project, ongoing work, or a key publication you want to highlight.</p>
+        <span class="research-tag">Working Paper</span>
+      </div>
+      <div class="research-item">
+        <h3>Research Area Three</h3>
+        <p>Another research interest, collaborative project, or thesis area you are currently exploring.</p>
+        <span class="research-tag">In Progress</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="blog" style="margin-bottom: 3.5rem;">
+    <p class="section-label">Blog</p>
+    <div class="blog-list">
+      <a href="#" class="blog-post">
+        <div>
+          <p class="blog-post-title">Your First Post Title Goes Here</p>
+          <p class="blog-post-excerpt">A short line summarising what this post is about — a thought, update, or reflection.</p>
+        </div>
+        <span class="blog-post-date">Apr 2026</span>
+      </a>
+      <a href="#" class="blog-post">
+        <div>
+          <p class="blog-post-title">Notes on [Topic You Care About]</p>
+          <p class="blog-post-excerpt">Another post — perhaps from a conference, a paper you read, or a teaching moment.</p>
+        </div>
+        <span class="blog-post-date">Mar 2026</span>
+      </a>
+      <a href="#" class="blog-post">
+        <div>
+          <p class="blog-post-title">A Third Post or Announcement</p>
+          <p class="blog-post-excerpt">News about a publication, an event, a talk, or anything you want to share publicly.</p>
+        </div>
+        <span class="blog-post-date">Jan 2026</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="contact">
+    <p class="section-label">Contact</p>
+    <div class="contact-row">
+      <div class="contact-item">
+        <p class="c-label">Email</p>
+        <a href="mailto:swati@university.edu">swati@university.edu</a>
+      </div>
+      <div class="contact-item">
+        <p class="c-label">CV</p>
+        <a href="#">Download PDF</a>
+      </div>
+      <div class="contact-item">
+        <p class="c-label">Google Scholar</p>
+        <a href="#">View Profile</a>
+      </div>
+      <div class="contact-item">
+        <p class="c-label">Office</p>
+        <a href="#">Room [No.], [Building]</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Swati Moitra</span>
+    <span>[University Name]</span>
+  </footer>
+
+</body>
+</html>
